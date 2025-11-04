@@ -67,3 +67,18 @@ if __name__ == "__main__":
     print("\nTop 5 Hubs:")
     for i in top_hub_idx:
         print(titles[i], ":", final_hub[i])
+
+#csv export
+auth_list = []
+hub_list = []
+for i in range(len(titles)):
+    auth_list.append([titles[i], float(final_auth[i])])
+    hub_list.append([titles[i], float(final_hub[i])])
+
+df_auth = pd.DataFrame(auth_list, columns=["title","score"])
+df_hub = pd.DataFrame(hub_list, columns=["title","score"])
+
+df_auth.to_csv("hits_authority.csv", index=False)
+df_hub.to_csv("hits_hub.csv", index=False)
+
+print("\nHITS scores saved to hits_authority.csv and hits_hub.csv")

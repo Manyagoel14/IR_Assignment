@@ -30,7 +30,7 @@ for i in range(n):
 
 l_sorted = sorted(l.items(), key=lambda x: x[1], reverse=True)
 paper_titles = pd.read_excel("./Corpus2/papers.xlsx")
-paper_titles=paper_titles.iloc[:,:2]
+paper_titles=paper_titles.iloc[:,[0,2]]   # id + col3
 d=dict(paper_titles.values)
 
 print("\nTop 5 PageRank:")
@@ -41,3 +41,11 @@ for key,val in l_sorted:
     if count==5:
         break
 print("\nNo. of iterations:",iterations)
+
+#csv export
+pr_list = []
+for key,val in l.items():
+    pr_list.append([d[key], val])
+df_pr = pd.DataFrame(pr_list, columns=["title","score"])
+df_pr.to_csv("pagerank_scores.csv", index=False)
+print("\nPageRank scores saved to pagerank_scores.csv")
