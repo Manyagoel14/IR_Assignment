@@ -62,7 +62,8 @@ Applying **link analysis algorithms (PageRank and HITS)** to identify important 
 Below are some screenshots from the Streamlit app and graph visualization:
 
 ### Streamlit App Interface  
-![Streamlit App Interface](screenshots/app_home.png)
+![Streamlit App Interface](screenshots/streamlit1.png)
+![](screenshots/streamlit2.png)
 
 ### Top-Ranked Papers Table  
 ![Top Papers Table](screenshots/top_papers.png)
