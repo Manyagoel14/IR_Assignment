@@ -66,13 +66,13 @@ Below are some screenshots from the Streamlit app and graph visualization:
 ![](Screenshots/streamlit1.png)
 
 ### Top-Ranked Papers Table Using PageRank
-![](screenshots/pageRank.png)
+![](Screenshots/pageRank.png)
 
 ### Top-Ranked Papers Table Using HITS
-![](screenshots/hits.png)
+![](Screenshots/hits.png)
 
 ### Directed Graph Visualization  
-![Directed Graph Visualization](screenshots/network_plot.png)
+![Directed Graph Visualization](Screenshots/network_plot.png)
 
 > The node size is proportional to its PageRank value, and the color represents the HITS (authority/hub) score.
 
