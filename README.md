@@ -46,7 +46,7 @@ Applying **link analysis algorithms (PageRank and HITS)** to identify important 
    git clone https://github.com/Manyagoel14/IR_Assignment.git
 2. Install dependencies
    ```bash
-  pip install -r requirements.txt
+   pip install -r requirements.txt
 3. Run the streamlit app
   ```bash
 streamlit run app/app.py
