@@ -108,7 +108,7 @@ plot_col1, plot_col2 = st.columns([3, 1])
 with plot_col1:
     if refresh or True:
         try:
-            fig = np_plot.create_network_plot(labels_on=labels_on, save_path=None)
+            fig = np_plot.create_network_plot(labels_on=labels_on, save_path=None, figsize=(14, 8), top_k=top_k)
             st.pyplot(fig)
         except Exception as e:
             st.error(f"Failed to create plot dynamically: {e}")

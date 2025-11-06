@@ -15,13 +15,8 @@ def create_network_plot(
     save_path=None,
     figsize=(13, 10),
     seed=42,
+    top_k=5, 
 ):
-    """
-    Build and return a matplotlib Figure showing the directed network.
-    - labels_on: whether to show node labels (your UI asked labels OFF by default)
-    - save_path: if provided, the figure will be saved to this path (PNG or other supported).
-    Returns: matplotlib.figure.Figure
-    """
    
     adj = pd.read_csv(adjacency_path, index_col=0)
     A = adj.values
@@ -40,7 +35,6 @@ def create_network_plot(
     auth_scores = dict(zip(auth_df.iloc[:, 0], auth_df.iloc[:, 1])) if auth_df.shape[1] >= 2 else dict()
     hub_scores = dict(zip(hub_df.iloc[:, 0], hub_df.iloc[:, 1])) if hub_df.shape[1] >= 2 else dict()
 
-    # --- graph build ---
     G = nx.DiGraph()
     for t in titles:
         G.add_node(t)
@@ -48,28 +42,26 @@ def create_network_plot(
     for i in range(len(A)):
         for j in range(len(A)):
             if A[i][j] != 0:
-                # source = titles[i], target = titles[j]
                 G.add_edge(titles[i], titles[j])
 
-    # --- identify top5 hubs / authorities ---
-    top5_auth = set(auth_df.sort_values(by=auth_df.columns[1], ascending=False).head(5).iloc[:, 0].tolist())
-    top5_hub = set(hub_df.sort_values(by=hub_df.columns[1], ascending=False).head(5).iloc[:, 0].tolist())
+    
+    top_auth = set(auth_df.sort_values(by=auth_df.columns[1], ascending=False).head(top_k).iloc[:, 0].tolist())
+    top_hub = set(hub_df.sort_values(by=hub_df.columns[1], ascending=False).head(top_k).iloc[:, 0].tolist())
 
-    # --- colors (visual roles) ---
     colors = []
     for t in titles:
-        if t in top5_auth and t in top5_hub:
-            colors.append("purple")   # both
-        elif t in top5_auth:
-            colors.append("red")      # authorities
-        elif t in top5_hub:
-            colors.append("blue")     # hubs
+        if t in top_auth and t in top_hub:
+            colors.append("purple")   #both
+        elif t in top_auth:
+            colors.append("red")      #authorities
+        elif t in top_hub:
+            colors.append("blue")     #hubs
         else:
             colors.append("gray")
 
-    # --- sizes from pagerank ---
+    #sizes are proportional to pagerank 
     sizes = np.array(pr_scores_list[: len(titles)]) if len(pr_scores_list) >= len(titles) else np.array(pr_scores_list)
-    # guard: if sizes length mismatch, pad or trim
+   
     if sizes.size < len(titles):
         sizes = np.pad(sizes, (0, len(titles) - sizes.size), constant_values=sizes.min() if sizes.size>0 else 0.0)
     sizes = ((sizes - sizes.min()) / (sizes.max() - sizes.min() + 1e-12)) * 2000 + 300
@@ -97,8 +89,7 @@ def create_network_plot(
     ax.set_title("Graph Network Visualization\nNode Size = PageRank   Colors = HITS Top Roles")
     ax.axis("off")
 
-    # add simple legend
-    # draw proxy artists for legend
+  
     from matplotlib.lines import Line2D
 
     legend_elements = [
@@ -118,6 +109,5 @@ def create_network_plot(
 
 
 if __name__ == "__main__":
-    # if run directly, create and show + save
     fig = create_network_plot(save_path="network_plot.png", labels_on=True)
     plt.show()
