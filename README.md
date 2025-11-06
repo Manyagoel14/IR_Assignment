@@ -47,6 +47,10 @@ Applying **link analysis algorithms (PageRank and HITS)** to identify important 
 2. Install dependencies
    ```bash
    pip install -r requirements.txt
+3. Run the 2 algorithm files
+   ```bash
+   python hits.py
+   python pageRank.py
 3. Run the streamlit app
    ```bash
    streamlit run app/app.py
