@@ -50,4 +50,22 @@ Applying **link analysis algorithms (PageRank and HITS)** to identify important 
 3. Run the streamlit app
    ```bash
    streamlit run app/app.py
+   
+---
+
+## 🖼️ Screenshots  
+
+Below are some screenshots from the Streamlit app and graph visualization:
+
+### Streamlit App Interface  
+![Streamlit App Interface](screenshots/app_home.png)
+
+### Top-Ranked Papers Table  
+![Top Papers Table](screenshots/top_papers.png)
+
+### Directed Graph Visualization  
+![Directed Graph Visualization](screenshots/graph_view.png)
+
+> The node size is proportional to its PageRank value, and the color represents the HITS (authority/hub) score.
+
 
