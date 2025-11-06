@@ -48,6 +48,6 @@ Applying **link analysis algorithms (PageRank and HITS)** to identify important 
    ```bash
    pip install -r requirements.txt
 3. Run the streamlit app
-  ```bash
-  streamlit run app/app.py
+   ```bash
+   streamlit run app/app.py
 
