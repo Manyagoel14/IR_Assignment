@@ -1,11 +1,11 @@
-# 🧠 IR Assignment  
+# IR Assignment  
 ## Ranking Webpages and Influencers using PageRank and HITS  
 
 Applying **link analysis algorithms (PageRank and HITS)** to identify important and influential entities in a network of documents.
 
 ---
 
-## 📚 Table of Contents  
+## Table of Contents  
 - [Features](#features)  
 - [Installation](#installation)  
 - [Screenshots](#screenshots)  
@@ -13,7 +13,7 @@ Applying **link analysis algorithms (PageRank and HITS)** to identify important 
 
 ---
 
-## 🚀 Features  
+## Features  
 
 ### Define the Corpus and Adjacency Matrix  
 - Construct a **corpus** consisting of research papers (or documents) as nodes.  
@@ -39,7 +39,7 @@ Applying **link analysis algorithms (PageRank and HITS)** to identify important 
 
 ---
 
-## ⚙️ Installation  
+## Installation  
 
 1. Clone the repository  
    ```bash
@@ -53,7 +53,7 @@ Applying **link analysis algorithms (PageRank and HITS)** to identify important 
    
 ---
 
-## 🖼️ Screenshots  
+## Screenshots  
 
 Below are some screenshots from the Streamlit app and graph visualization:
 
@@ -70,7 +70,7 @@ Below are some screenshots from the Streamlit app and graph visualization:
 
 ---
 
-## 👥 Contributors  
+## Contributors  
 
 We collaborated on this project as part of our **Information Retrieval Assignment**, focusing on implementing and visualizing link analysis algorithms.
 
