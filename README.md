@@ -74,9 +74,9 @@ Below are some screenshots from the Streamlit app and graph visualization:
 
 We collaborated on this project as part of our **Information Retrieval Assignment**, focusing on implementing and visualizing link analysis algorithms.
 
-| [Manya Goel](https://github.com/ManyaGoel14) |
-| [Dhanya Girdhar](https://github.com/Dhanya0412) | 
-| [Raashi Sharma](https://github.com/Raashi2120) |
+-[Manya Goel](https://github.com/ManyaGoel14) 
+-[Dhanya Girdhar](https://github.com/Dhanya0412)  
+-[Raashi Sharma](https://github.com/Raashi2120)
 
 ---
 
