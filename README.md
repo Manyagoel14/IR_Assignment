@@ -44,3 +44,10 @@ Applying **link analysis algorithms (PageRank and HITS)** to identify important 
 1. Clone the repository  
    ```bash
    git clone https://github.com/Manyagoel14/IR_Assignment.git
+2. Install dependencies
+   ```bash
+  pip install -r requirements.txt
+3. Run the streamlit app
+  ```bash
+streamlit run app/app.py
+
