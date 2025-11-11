@@ -1,5 +1,5 @@
 # IR Assignment  
-## Ranking Webpages and Influencers using PageRank and HITS  
+## Ranking Webpages using PageRank and HITS  
 
 Applying **link analysis algorithms (PageRank and HITS)** to identify important and influential entities in a network of documents.
 
